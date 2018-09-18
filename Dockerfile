@@ -28,5 +28,6 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz && \
     tar -xzvf helm-v2.9.1-linux-amd64.tar.gz && \
-    mv ./linux-amd64/helm /usr/local/bin/helm && helm init --client-only
+    mv ./linux-amd64/helm /usr/local/bin/helm && helm init --client-only && \ 
+    helm plugin install https://github.com/chartmuseum/helm-push
 
